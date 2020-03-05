@@ -3,19 +3,23 @@
         <meta charset="UTF-8">
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-        <title>Compilador | @yield('title')</title>
+        <title>App | @yield('title')</title>
 
         <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}"/>
 
         <style>
-            body {
-                padding-top: 5%;
+            .navbar {
+                margin-bottom: 5%;
             }
         </style>
 
         @yield('styles')
     </head>
     <body>
+        <nav class="navbar navbar-dark bg-primary">
+            <a class="navbar-brand" href="/clientes">Clientes</a>
+        </nav>
+
         <div class="container">
             @yield('content')
         </div>
