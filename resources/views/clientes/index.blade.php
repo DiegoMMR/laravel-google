@@ -35,6 +35,7 @@
                         <td>
                             <a class="btn btn-info btn-sm" href="{{ route('clientes.show', $cliente->id) }}">Mostrar</a>
                             <a class="btn btn-warning btn-sm" href="{{ route('clientes.edit', $cliente->id) }}">Editar</a>
+                            <a class="btn btn-success btn-sm" href="{{ route('clientes.clima', $cliente->id) }}">Clima</a>
                         </td>
                         </tr>
                     @endforeach

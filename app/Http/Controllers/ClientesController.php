@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 use Illuminate\Support\Facades\Validator;
+use GuzzleHttp\Client;
 
 class ClientesController extends Controller
 {
@@ -118,5 +119,27 @@ class ClientesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function clima($id)
+    {
+        $cliente = Cliente::find($id);
+
+        //dd($cliente);
+
+        $client = new Client();
+        $api_url = Config('wheather.api_url');
+        $api_key = Config('wheather.api_key');
+
+        $url = $api_url . '?q=' . $cliente->ubicacion . '&APPID=' . $api_key . '&lang=sp';
+        //dd($url);
+
+        $response = $client->get($url);
+
+        $clima = json_decode((string) $response->getBody());
+        //dd($clima);
+
+        return view('clientes.clima', compact('clima', 'cliente'));
+
     }
 }

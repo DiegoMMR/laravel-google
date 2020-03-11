@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Usuarios')
+@section('title', 'Welcome')
 
 @section('content')
     <div class="card">
         <div class="card-header">
-            Usuarios
+            Welcome
         </div>
 
         <div class="card-body">

@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::resource('clientes', 'ClientesController');
+Route::get('clientes/{id}/clima', 'ClientesController@clima')->name('clientes.clima');
